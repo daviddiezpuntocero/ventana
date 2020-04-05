@@ -1,3 +1,3 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'gcr.io/cloud-builders/gcloud'
   args: ['build', '-t', 'daviddiezpuntocero/node-socket-io/image', '.']
