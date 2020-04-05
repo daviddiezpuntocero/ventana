@@ -1,4 +1,2 @@
 steps:
 - name: 'daviddiezpuntocero/node-socket-io'
-  args: ['install', '.']
-  dir: '/home/dherrero/node-socket-io'
