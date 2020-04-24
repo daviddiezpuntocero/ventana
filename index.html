@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="utf-8" />
+<title>Fechas</title>
+<link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.css" />
+<script src="js/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+<script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
+<script src="js/jquery-ui-1.12.1/regional.js"></script>
+<script>
+ //La adaptación a fecha en español está en el fichero regional.js
+  
+   $(function () {
+   $("#fecha1").datepicker();
+   $("#fecha2").datepicker();
+   });
+ 
+ function validar(){
+   
+  if ($("#fecha1").val()==''){
+    alert("Selecciona una fecha inicial del informe");
+       return;
+  }
+  if ($("#fecha2").val()==''){
+    alert("Selecciona una fecha final para el informe");
+       return;
+  }
+  if ($("#fecha1").val()>$("#fecha2").val()){
+       alert("La fecha desde no puede ser posterior a la fecha hasta");
+       return;
+   }
+   
+   else{
+    //Modificar el action con la dirección donde se envia en form   
+    document.formulario1.action = 'https://google.com';
+    document.formulario1.submit();
+    }
+   
+ }
+
+</script>
+</head>
+<body>
+<form action="#" method=post name="formulario1" onsubmit="validar()">
+<label for="fecha1">Desde:
+ <input type="text" id="fecha1" value="" />
+</label>
+<label for="fecha2">Hasta:
+    <input type="text" id="fecha2" value="" />
+   </label>
+   <button type="submit" id="myBtn">Enviar</button>
+</form>
+</body>
+</html>
